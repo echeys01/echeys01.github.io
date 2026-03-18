@@ -1,7 +1,10 @@
 // Eric Cheyssial | CSC 193A | Assignment 5
 
-// Main buttons.
+// Button references.
 const biggerButton = document.querySelector("#biggerButton");
+const mooButton = document.querySelector("#mooButton");
+
+// Radio button references.
 const fancyButton = document.querySelector("#fancyShmancy");
 const boringButton = document.querySelector("#boringBetty");
 
@@ -15,9 +18,13 @@ const textArea = document.getElementById("userText");
 
 // biggerButton.onclick = alertBiggerClicked;
 
-function increaseFontSize() {
+function modifyFontSize() {
   textArea.style.fontSize = "24pt";
 } // function increaseFontSize
+
+function modifyCase() {
+    textArea.value = textArea.value.toUpperCase();
+} // function modifyCase
 
 function styleText() {
     if (fancyButton.checked) {
@@ -33,7 +40,11 @@ function styleText() {
     }
 } // function styleText
 
-biggerButton.onclick = increaseFontSize;
+// Button click events.
+biggerButton.onclick = modifyFontSize;
+mooButton.onclick = modifyCase;
+
+// Radio button check events.
 fancyButton.onchange = styleText;
 boringButton.onchange = styleText;
 
